@@ -16,6 +16,12 @@ Scrapes Chilean business directories for **email addresses** (primary goal), com
 
 Email is the most valuable field. Every scraper module must prioritize finding email over any other field. If no email is found, the lead is still saved but marked `email: null` — do not discard.
 
+**Hidden email handling:** Directories like pymesdechile.cl and direcmin.com often hide the email behind a "ver contacto" / "mostrar email" click or obfuscate it (image, JS-rendered, `data-` attribute). The scraper must:
+1. Attempt the contact-reveal click/expand before giving up on a lead
+2. If still hidden, fall back to scraping the linked business website's contact/about page for an email
+3. Decode common obfuscation (entity-encoded, `[at]`/`[dot]` patterns, `data-email` attributes)
+4. Only mark `email: null` after all three fail
+
 ---
 
 ## Sector Priority (hardcoded, from business plan)

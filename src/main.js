@@ -16,21 +16,6 @@ if (!window.__heroCycleDefined) {
   })();
 }
 
-// scroll fade-ins
-(function () {
-  var els = document.querySelectorAll('.fade-in');
-  if (!els.length) return;
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.08 });
-  els.forEach(function (el) { io.observe(el); });
-})();
-
 // featured projects to show in portfolio
 var PROJECTS = [
   {
@@ -78,36 +63,66 @@ var PROJECTS = [
   }
 ];
 
-// render portfolio grid
+// render portfolio grid FIRST, then observe fade-ins so the cards are caught
 (function () {
   var grid = document.getElementById('portfolio-grid');
-  if (!grid) return;
+  if (grid) {
+    PROJECTS.forEach(function (p) {
+      var card = document.createElement('div');
+      card.className = 'project-card fade-in';
 
-  PROJECTS.forEach(function (p) {
-    var card = document.createElement('div');
-    card.className = 'project-card fade-in';
+      var tagsHtml = p.tags.map(function (t) {
+        return '<span class="proj-tag">' + t + '</span>';
+      }).join('');
 
-    var tagsHtml = p.tags.map(function (t) {
-      return '<span class="proj-tag">' + t + '</span>';
-    }).join('');
+      var demoBtn = p.demo
+        ? '<a href="' + p.demo + '" target="_blank" rel="noopener" class="btn" style="padding:6px 14px;font-size:12px;">Live ↗</a>'
+        : '';
 
-    var demoBtn = p.demo
-      ? '<a href="' + p.demo + '" target="_blank" rel="noopener" class="btn" style="padding:6px 14px;font-size:12px;">Live ↗</a>'
-      : '';
+      card.innerHTML =
+        '<div class="project-header">' +
+          '<span class="project-name">' + p.name + '</span>' +
+          '<span class="project-lang">' + p.lang + '</span>' +
+        '</div>' +
+        '<p class="project-desc">' + p.desc + '</p>' +
+        '<div class="project-footer">' +
+          tagsHtml +
+          '<div style="flex:1"></div>' +
+          '<a href="' + p.url + '" target="_blank" rel="noopener" class="btn" style="padding:6px 14px;font-size:12px;">GitHub ↗</a>' +
+          demoBtn +
+        '</div>';
 
-    card.innerHTML =
-      '<div class="project-header">' +
-        '<span class="project-name">' + p.name + '</span>' +
-        '<span class="project-lang">' + p.lang + '</span>' +
-      '</div>' +
-      '<p class="project-desc">' + p.desc + '</p>' +
-      '<div class="project-footer">' +
-        tagsHtml +
-        '<div style="flex:1"></div>' +
-        '<a href="' + p.url + '" target="_blank" rel="noopener" class="btn" style="padding:6px 14px;font-size:12px;">GitHub ↗</a>' +
-        demoBtn +
-      '</div>';
+      grid.appendChild(card);
+    });
+  }
 
-    grid.appendChild(card);
-  });
+  // scroll fade-ins — runs AFTER portfolio cards exist so they get observed
+  var els = document.querySelectorAll('.fade-in');
+  if (!els.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    // Fallback: just show everything
+    els.forEach(function (el) { el.classList.add('visible'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.05 });
+
+  els.forEach(function (el) { io.observe(el); });
+
+  // Safety net: if anything is still hidden after 1.5s (e.g. already in view
+  // but observer missed it), force-show it.
+  setTimeout(function () {
+    document.querySelectorAll('.fade-in:not(.visible)').forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight) el.classList.add('visible');
+    });
+  }, 1500);
 })();
