@@ -37,6 +37,8 @@ Nav order: `Servicios · Proyectos · El trabajo · Propuesta · Artículos · C
 
 Page section order: Banner → Nav → Hero → **El trabajo** → Pricing → Portfolio → Contact → Footer
 
+**Banner change:** Remove countdown timer (`3d 00h 00m 00s`) and all associated JS. Keep spots counter (dots + "Solo 2 cupos" text) — this is manually maintained and honest.
+
 ---
 
 ## 2. i18n Convention
@@ -208,7 +210,7 @@ Public page. ES only. **This Propuesta covers the Landing Page tier ($360 lanzam
 **Hosting:** Incluido el primer año. Administrado por FCB. Cliente recibe credenciales NIC Chile y acceso al dominio.
 
 **T&C (small font):**
-> El código fuente del sitio es propiedad de Brøwn Marcó Studios hasta el pago total del servicio. La transferencia de propiedad del repositorio y código fuente requiere un acuerdo adicional. El hosting puede ser transferido al cliente previo acuerdo por escrito.
+> El código fuente del sitio es propiedad de Brøwn Marcó Studios hasta el pago total del servicio. La transferencia de propiedad del repositorio y código fuente requiere un acuerdo adicional. El hosting puede ser transferido al cliente previo acuerdo por escrito. El cliente autoriza a Brøwn Marcó Studios a mencionar su marca y enlazar su sitio web como referencia de trabajo en fcarvajalbrown.cl y materiales de difusión relacionados.
 
 **PDF:** Static PDF committed to the repo at `docs/propuesta.pdf`. Generated once manually (or via reportlab) from the same content. The "Descargar PDF" link points to this file directly.
 
