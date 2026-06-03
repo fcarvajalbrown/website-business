@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="90mm" height="50mm"
+     viewBox="0 0 1063 591">
+
+  <!-- Full bleed background white -->
+  <rect x="0" y="0" width="1063" height="591" fill="#ffffff"/>
+
+  <!-- Thin purple accent line at bottom -->
+  <rect x="0" y="572" width="1063" height="3" fill="#8b7cf6" opacity="0.85"/>
+
+  <!-- FCB small monogram top-left -->
+  <text x="120" y="140"
+        font-family="'Jost', 'Futura', 'Century Gothic', sans-serif"
+        font-weight="700"
+        font-size="64"
+        fill="#1a1a1a"
+        letter-spacing="4">FCB</text>
+
+  <!-- Divider -->
+  <line x1="120" y1="160" x2="940" y2="160" stroke="#e0e0e0" stroke-width="1"/>
+
+  <!-- Contact lines — evenly spaced in safe area -->
+  <text x="120" y="222"
+        font-family="'Jost', 'Futura', 'Century Gothic', sans-serif"
+        font-weight="400" font-size="36" fill="#444444">fcarvajalbrown@gmail.com</text>
+
+  <text x="120" y="286"
+        font-family="'Jost', 'Futura', 'Century Gothic', sans-serif"
+        font-weight="400" font-size="36" fill="#444444">+56 9 3236 4993</text>
+
+  <text x="120" y="350"
+        font-family="'Jost', 'Futura', 'Century Gothic', sans-serif"
+        font-weight="400" font-size="36" fill="#7b6fe0">fcarvajalbrown.cl</text>
+
+  <text x="120" y="414"
+        font-family="'Jost', 'Futura', 'Century Gothic', sans-serif"
+        font-weight="400" font-size="36" fill="#444444">linkedin.com/in/fcarvajalbrown</text>
+
+  <text x="120" y="478"
+        font-family="'Jost', 'Futura', 'Century Gothic', sans-serif"
+        font-weight="400" font-size="36" fill="#444444">github.com/fcarvajalbrown</text>
+
+</svg>

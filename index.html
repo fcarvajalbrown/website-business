@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Felipe Carvajal Brown — Desarrollo de software a medida para startups y pymes chilenas. Sitios web en 2 semanas o te devuelvo el dinero.">
+  <meta name="author" content="Felipe Carvajal Brown">
+  <meta property="og:title" content="Felipe Carvajal Brown — Desarrollo de Software">
+  <meta property="og:description" content="Sitios web para startups chilenas. Entrega en 2 semanas, precio fijo, garantía de devolución.">
+  <meta property="og:url" content="https://fcarvajalbrown.cl">
+  <meta property="og:type" content="website">
+  <title>Felipe Carvajal Brown — Desarrollo de Software</title>
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+
+  <!-- BANNER -->
+  <div id="banner">
+    <span class="banner-pill">Lanzamiento</span>
+    <div class="spots">
+      <span class="dot taken"></span>
+      <span class="dot available"></span>
+      <span class="dot available"></span>
+      <span>Solo <strong>2 cupos</strong> con precio de lanzamiento</span>
+    </div>
+    <div class="timer">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Oferta expira en&nbsp;
+      <span class="timer-val" id="td">3</span>d&nbsp;
+      <span class="timer-val" id="th">00</span>h&nbsp;
+      <span class="timer-val" id="tm">00</span>m&nbsp;
+      <span class="timer-val" id="ts">00</span>s
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-logo">FCB</span>
+    <ul class="nav-links">
+      <li><a href="#pricing">Servicios</a></li>
+      <li><a href="#portfolio">Proyectos</a></li>
+      <li><a href="#contact">Contacto</a></li>
+      <li><a href="https://github.com/fcarvajalbrown" target="_blank" rel="noopener">GitHub ↗</a></li>
+    </ul>
+  </nav>
+
+  <hr class="divider">
+
+  <!-- HERO -->
+  <section id="hero" style="padding-top:72px;padding-bottom:80px;">
+    <div class="section-inner" style="padding:0;">
+      <p class="eyebrow">Felipe Carvajal Brown · Santiago, Chile</p>
+      <h1 class="hero-title">
+        Software a medida<br>
+        para tu negocio.<br>
+        <em>Sin agencia, sin bloat.</em>
+      </h1>
+      <p class="hero-sub">
+        Construyo sitios web, herramientas internas y automatizaciones que realmente funcionan.
+        Directo, sin burocracia, con entrega rápida y código que puedes mantener.
+      </p>
+      <div class="tags">
+        <span class="tag">React / Next.js</span>
+        <span class="tag">Python / FastAPI</span>
+        <span class="tag">Rust</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">IA / Agentes</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="https://wa.me/56932364993" target="_blank" rel="noopener" class="btn btn-primary">Cotizar por WhatsApp ↗</a>
+        <a href="#portfolio" class="btn">Ver proyectos</a>
+        <a href="https://linkedin.com/in/fcarvajalbrown" target="_blank" rel="noopener" class="btn">LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="section-inner">
+      <p class="section-label">Servicios &amp; Precios</p>
+      <h2 class="section-title">Lo que ofrezco</h2>
+
+      <div class="promo-bar">
+        <strong>Precio de lanzamiento para los primeros 3 clientes.</strong>
+        Ya hay 1 tomado — quedan 2 cupos con 40% de descuento.
+        Precio regular entra en vigor cuando se completen.
+      </div>
+
+      <div class="pricing-grid">
+
+        <div class="price-card">
+          <span class="card-badge badge-success">Disponible</span>
+          <p class="card-name">Landing page</p>
+          <div class="card-price">
+            <span class="price-was">$600</span>
+            <span class="price-now">$360</span>
+            <span class="price-unit">USD</span>
+          </div>
+          <p class="card-desc">
+            Diseño, dominio .cl, GitHub Pages, TLS incluido.
+            Entrega en máximo 2 semanas o devolución completa.
+          </p>
+        </div>
+
+        <div class="price-card featured">
+          <span class="card-badge badge-accent">Más pedido</span>
+          <p class="card-name">Web + sistema interno</p>
+          <div class="card-price">
+            <span class="price-now">$1.800</span>
+            <span class="price-unit">USD</span>
+          </div>
+          <p class="card-desc">
+            Sitio público + panel admin, base de datos, autenticación.
+            Propuesta separada. 2–3 semanas.
+          </p>
+        </div>
+
+        <div class="price-card">
+          <span class="card-badge badge-warning">Por hora</span>
+          <p class="card-name">Consultoría / fixes</p>
+          <div class="card-price">
+            <span class="price-was">$55</span>
+            <span class="price-now">$33</span>
+            <span class="price-unit">USD/hr</span>
+          </div>
+          <p class="card-desc">
+            Auditoría de código, bugs urgentes, integración de APIs.
+            Mínimo 2 horas.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="section-inner">
+      <p class="section-label">Proyectos</p>
+      <h2 class="section-title">Trabajo reciente</h2>
+      <div class="portfolio-grid" id="portfolio-grid"></div>
+      <div style="margin-top:24px;">
+        <a href="https://fcarvajalbrown.github.io/perport" target="_blank" rel="noopener" class="btn">
+          Ver portafolio completo ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <p class="section-label">Contacto</p>
+      <h2 class="section-title">Hablemos</h2>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14h.01v2.92z"/></svg>
+          <div>
+            <p class="contact-label">WhatsApp</p>
+            <a href="https://wa.me/56932364993" class="contact-val" target="_blank" rel="noopener">+56 9 3236 4993</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div>
+            <p class="contact-label">Email</p>
+            <a href="mailto:fcarvajalbrown@gmail.com" class="contact-val">fcarvajalbrown@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <div>
+            <p class="contact-label">LinkedIn</p>
+            <a href="https://linkedin.com/in/fcarvajalbrown" target="_blank" rel="noopener" class="contact-val">fcarvajalbrown</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          <div>
+            <p class="contact-label">GitHub</p>
+            <a href="https://github.com/fcarvajalbrown" target="_blank" rel="noopener" class="contact-val">fcarvajalbrown</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="https://wa.me/56932364993" target="_blank" rel="noopener" class="btn btn-primary">Escribir por WhatsApp ↗</a>
+        <a href="mailto:fcarvajalbrown@gmail.com" class="btn">Enviar email</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="accent-line"></div>
+    <p>© 2026 Felipe Carvajal Brown · Santiago, Chile ·
+      <a href="https://fcarvajalbrown.cl">fcarvajalbrown.cl</a>
+    </p>
+  </footer>
+
+  <script src="src/main.js"></script>
+</body>
+</html>

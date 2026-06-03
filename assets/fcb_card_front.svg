@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="90mm" height="50mm"
+     viewBox="0 0 1063 591">
+  <!-- 90x50mm at 300dpi = 1063x591px, 3mm bleed each side = +71px each side -->
+  <!-- Safe area starts at x=71, y=71, ends at x=992, y=520 -->
+
+  <!-- Full bleed background -->
+  <rect x="0" y="0" width="1063" height="591" fill="#1a1a1a"/>
+
+  <!-- Bleed edge indicator (will be cut) — just fill, no visible marks -->
+
+  <!-- Thin purple accent line at bottom, inside safe area -->
+  <rect x="0" y="572" width="1063" height="3" fill="#8b7cf6" opacity="0.85"/>
+
+  <!-- FCB monogram — safe area left margin 95px (a bit inside bleed) -->
+  <text x="120" y="280"
+        font-family="'Jost', 'Futura', 'Century Gothic', sans-serif"
+        font-weight="700"
+        font-size="180"
+        fill="#f5f5f5"
+        letter-spacing="8">FCB</text>
+
+  <!-- Divider line -->
+  <line x1="120" y1="320" x2="940" y2="320" stroke="#2e2e2e" stroke-width="1.2"/>
+
+  <!-- Name -->
+  <text x="120" y="380"
+        font-family="'Jost', 'Futura', 'Century Gothic', sans-serif"
+        font-weight="400"
+        font-size="52"
+        fill="#e0e0e0">Felipe Carvajal Brown</text>
+
+  <!-- Subtitle -->
+  <text x="120" y="430"
+        font-family="'Jost', 'Futura', 'Century Gothic', sans-serif"
+        font-weight="300"
+        font-size="38"
+        fill="#666666">Desarrollo de Software</text>
+
+  <text x="120" y="472"
+        font-family="'Jost', 'Futura', 'Century Gothic', sans-serif"
+        font-weight="300"
+        font-size="34"
+        fill="#444444">Santiago, Chile</text>
+
+</svg>
