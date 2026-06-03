@@ -2,7 +2,15 @@
 
 ## Session start
 
-At the start of every session, before anything else, remind Felipe: **check `docs/pna0.5.md`** — it contains the running grey-area SEO tactics and business notes that should inform any site or outreach work.
+At the start of every session, before anything else:
+
+1. Remind Felipe: **check `docs/pna0.5.md`** — grey-area SEO tactics and business notes that inform any site or outreach work.
+2. Check memory for the **pre-send checklist** and surface any unfinished blocking items before doing outreach work. Blocking items as of 2026-06-03:
+   - [ ] Google Business Profile registered (3-5 day postcard wait — start immediately)
+   - [ ] Calendly 20-min slot live + link pasted into Brevo templates
+   - [ ] felipecarvajal.cl verified on mobile
+   - [ ] Brevo sender email verified + sequence built from `docs/email-templates.md`
+   - [ ] outputs/ folder backed up to cloud (CSVs are gitignored)
 
 Personal business/freelance landing page for Felipe Carvajal Brown — software development services for Chilean startups and SMEs.
 
