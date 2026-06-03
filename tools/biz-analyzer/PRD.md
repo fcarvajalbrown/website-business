@@ -174,3 +174,29 @@ Hola {contact_name or "equipo"},
 - LinkedIn scraping (manual verification only)
 - Automatic email sending (output is a rendered draft, sending is manual)
 - Fintech leads
+
+---
+
+## v2 Idea — Browser Automation + Local Vision LLM
+
+Instead of any API (Apollo, LinkedIn, Google Maps), control a real browser like a human and use a local vision model as fallback when CSS selectors break or UIs change.
+
+**Approach:**
+- Playwright drives a non-headless Chromium session (visible browser, can handle CAPTCHAs manually)
+- For known, stable UIs (Google Maps, Páginas Amarillas): pure Playwright CSS selectors
+- For dynamic/changing UIs (Apollo, LinkedIn): take a screenshot → send to local LLM (Ollama + LLaVA or Qwen-VL) → ask "where is the search button / where is the company name field?" → get coordinates → click
+- Teach the LLM what elements to look for via a description file per source (`sources/apollo_ui.txt`: "Search box is a text input near the top. Results list has company name in bold. Export button is top-right.")
+- Fallback chain: CSS selector → vision LLM → human prompt (pause and ask user to click)
+
+**Why this is better than APIs:**
+- No rate limits beyond human-speed browsing
+- No paid tiers — uses your existing logged-in sessions
+- Resilient to site redesigns (vision model adapts)
+- Zero API keys to manage
+
+**Local LLM requirements:**
+- Ollama running locally with a vision-capable model (LLaVA 1.6, Qwen2-VL, or Moondream)
+- ~4–8GB VRAM for a usable vision model
+- API: `ollama run llava "describe where the search button is" --image screenshot.png`
+
+**When to build:** After v1 proves the scraping concept. Start with Google Maps (stable DOM) then add vision fallback for Apollo.

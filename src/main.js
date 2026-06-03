@@ -1,25 +1,34 @@
-// countdown timer
+// kinetic hero word cycle — skipped if page defines its own (e.g. /en/)
+if (!window.__heroCycleDefined) {
+  (function () {
+    var words = ['Rápido.', 'Confiable.', 'Sin agencia.', 'A tiempo.', 'Sin sorpresas.'];
+    var el = document.getElementById('hero-cycle');
+    if (!el) return;
+    var i = 0;
+    setInterval(function () {
+      el.style.opacity = '0';
+      setTimeout(function () {
+        i = (i + 1) % words.length;
+        el.textContent = words[i];
+        el.style.opacity = '1';
+      }, 350);
+    }, 2200);
+  })();
+}
+
+// scroll fade-ins
 (function () {
-  var end = new Date();
-  end.setDate(end.getDate() + 3);
-
-  function pad(n) { return String(n).padStart(2, '0'); }
-
-  function tick() {
-    var diff = end - new Date();
-    if (diff <= 0) { clearInterval(id); return; }
-    var d = Math.floor(diff / 86400000);
-    var h = Math.floor((diff % 86400000) / 3600000);
-    var m = Math.floor((diff % 3600000) / 60000);
-    var s = Math.floor((diff % 60000) / 1000);
-    document.getElementById('td').textContent = d;
-    document.getElementById('th').textContent = pad(h);
-    document.getElementById('tm').textContent = pad(m);
-    document.getElementById('ts').textContent = pad(s);
-  }
-
-  tick();
-  var id = setInterval(tick, 1000);
+  var els = document.querySelectorAll('.fade-in');
+  if (!els.length) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  els.forEach(function (el) { io.observe(el); });
 })();
 
 // featured projects to show in portfolio
@@ -76,7 +85,7 @@ var PROJECTS = [
 
   PROJECTS.forEach(function (p) {
     var card = document.createElement('div');
-    card.className = 'project-card';
+    card.className = 'project-card fade-in';
 
     var tagsHtml = p.tags.map(function (t) {
       return '<span class="proj-tag">' + t + '</span>';
