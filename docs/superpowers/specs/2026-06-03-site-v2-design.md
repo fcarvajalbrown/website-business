@@ -102,7 +102,13 @@ Effect: `opacity 0→1` + `translateY(12px→0)`, 0.4s ease. No scroll event lis
 
 ---
 
-## 5. Pricing Cards → WhatsApp
+## 5. Pricing Cards → WhatsApp + Featured Fix
+
+**Featured card fix:** Landing page card gets `class="featured"` and badge "Recomendado" — it is the standard offer. Web + admin system loses the featured border and gets badge "A medida" — it is a custom quote, not the default. Consulting keeps "Por hora".
+
+Card click order in the grid: Landing page (featured, left) · Web + admin (center) · Consulting (right).
+
+
 
 Each pricing card (`div.price-card`) becomes the clickable element. The entire block links to `https://wa.me/56932364993`. No button added inside the card. `cursor: pointer` on the card. Works on WhatsApp Web (desktop) and app (mobile).
 
@@ -158,26 +164,48 @@ Articles listing page (`/articulos/index.html`) shows all 3 with title, excerpt,
 
 ## 8. Propuesta Page (`/propuesta/`)
 
-Public page. ES only (no EN version needed — target clients are Chilean).
+Public page. ES only. **This Propuesta covers the Landing Page tier ($360 lanzamiento / $600 regular). Web + Sistema Interno is quoted separately on request.**
 
 **Structure:**
-1. Header: "Propuesta de Servicios" · subtitle: "Claro, directo, sin sorpresas."
-2. Qué incluye (scope in + scope out)
-3. Plazos y garantía
-4. Pago
-5. Comunicación
-6. Entrega y acceso
-7. CTA: "Escribir por WhatsApp →" + "Descargar PDF"
-8. T&C (small font)
+1. Header: "Propuesta — Landing Page" · subtitle: "Claro, directo, sin sorpresas."
+2. Qué incluye
+3. Qué no incluye
+4. Plazos y garantía
+5. Pago
+6. Comunicación
+7. Entrega y acceso
+8. CTA: "Escribir por WhatsApp →" + "Descargar PDF"
+9. T&C (small font)
 
-**Scope in:** Diseño, desarrollo, hosting, dominio .cl, TLS.
-**Scope out:** Redacción, fotografía, ilustración, pasarela de pagos, login de usuarios, base de datos propia.
+**Qué incluye (expand this — it's longer than what's excluded):**
+- Diseño personalizado desde cero — sin templates, sin WordPress, sin constructores de páginas
+- Código HTML / CSS / JS puro y limpio, escrito a mano
+- Registro de dominio .cl (NIC Chile)
+- Hosting en servidor real — incluido el primer año
+- HTTPS / SSL (certificado TLS, renovación automática)
+- DNS configurado y apuntado correctamente desde el primer día
+- Diseño responsive — móvil, tablet y escritorio
+- Velocidad optimizada — sin plugins, sin librerías innecesarias, carga rápida en datos móviles chilenos
+- Meta tags completos (título, descripción, og:image para previsualizaciones en WhatsApp y redes)
+- Configuración de Google Search Console para indexación inmediata
+- Botón de contacto WhatsApp integrado
+- Hasta 2 rondas de revisión incluidas
+- Entrega en máximo 2 semanas — garantía de devolución si no se cumple
 
-**Plazos:** 2 semanas máximo. Devolución completa si no se cumple. Máximo 2 rondas de revisión.
+**Qué no incluye:**
+- Redacción de textos (el cliente provee el contenido o se cotiza aparte)
+- Fotografía profesional
+- Ilustración o diseño gráfico personalizado
+- Pasarela de pagos (Transbank, MercadoPago, etc.)
+- Login de usuarios o áreas privadas
+- Base de datos propia o lógica de servidor
+- Mantenimiento mensual (puede cotizarse por separado)
+
+**Plazos:** 2 semanas máximo desde el pago inicial. Devolución completa sin preguntas si no se cumple. Máximo 2 rondas de revisión incluidas.
 
 **Pago:** 50% al inicio, 50% en entrega. Proyectos sobre USD $1.000: 6 cuotas mensuales a solicitud.
 
-**Hosting:** Incluido. Administrado por FCB. Cliente recibe credenciales NIC Chile y acceso al dominio.
+**Hosting:** Incluido el primer año. Administrado por FCB. Cliente recibe credenciales NIC Chile y acceso al dominio.
 
 **T&C (small font):**
 > El código fuente del sitio es propiedad de Brøwn Marcó Studios hasta el pago total del servicio. La transferencia de propiedad del repositorio y código fuente requiere un acuerdo adicional. El hosting puede ser transferido al cliente previo acuerdo por escrito.
