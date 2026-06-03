@@ -1,6 +1,20 @@
 # website-business
 
+## Session start
+
+At the start of every session, before anything else, remind Felipe: **check `docs/pna0.5.md`** — it contains the running grey-area SEO tactics and business notes that should inform any site or outreach work.
+
 Personal business/freelance landing page for Felipe Carvajal Brown — software development services for Chilean startups and SMEs.
+
+## i18n convention
+
+**Two self-contained HTML files, never a JS translation dictionary.**
+- `index.html` = full Spanish content, hardcoded
+- `en/index.html` = full English content, hardcoded
+- Nav toggle = plain anchor links between `/` and `/en/`
+- `hreflang` tags in `<head>` of both declare them as language alternates
+- `main.js` is shared and language-neutral (portfolio renderer, timers, interactions)
+- Reason: JS-based i18n risks EN content not being indexed by Google in the first crawl wave
 
 ## Stack
 
