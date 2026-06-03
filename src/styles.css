@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;700&family=DM+Mono:wght@400;500&display=swap');
 
 :root {
-  --bg:          #1a1a1a;
-  --bg2:         #111111;
-  --surface:     #242424;
-  --light:       #f9f9f9;
+  --bg:          #15130f;
+  --bg2:         #100e0b;
+  --surface:     #211d17;
+  --light:       #f4efe6;
   --white:       #ffffff;
-  --text1:       #f5f5f5;
-  --text2:       #e0e0e0;
-  --muted:       #777777;
-  --faint:       #444444;
-  --dark:        #1a1a1a;
-  --accent:      #8b7cf6;
-  --accent-deep: #7b6fe0;
-  --accent-bg:   #2a2040;
-  --border-dark: #2e2e2e;
-  --border-lt:   #e0e0e0;
-  --success:     #4caf7c;
+  --text1:       #f4efe6;
+  --text2:       #ddd6c9;
+  --muted:       #8a8175;
+  --faint:       #3a352d;
+  --dark:        #15130f;
+  --accent:      #e8a33d;
+  --accent-deep: #d08f2e;
+  --accent-bg:   #2a2218;
+  --border-dark: #2c271f;
+  --border-lt:   #ddd6c9;
+  --success:     #6fb98f;
   --danger:      #e85c4a;
   --warning:     #e8c96e;
   --r:           6px;
@@ -210,9 +210,10 @@ nav {
 .btn-primary {
   background: var(--accent);
   border-color: var(--accent);
-  color: var(--white);
+  color: var(--dark);
+  font-weight: 700;
 }
-.btn-primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); color: var(--white); }
+.btn-primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); color: var(--dark); }
 
 /* ── SECTION SHARED ── */
 section { padding: 80px 48px; }
@@ -284,8 +285,8 @@ hr.divider {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-.badge-success { background: rgba(76,175,124,.15); color: var(--success); }
-.badge-accent  { background: rgba(139,124,246,.15); color: var(--accent); }
+.badge-success { background: rgba(111,185,143,.15); color: var(--success); }
+.badge-accent  { background: rgba(232,163,61,.15); color: var(--accent); }
 .badge-warning { background: rgba(232,201,110,.15); color: var(--warning); }
 
 .card-name {
