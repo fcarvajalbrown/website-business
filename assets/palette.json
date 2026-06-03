@@ -1,34 +1,34 @@
 {
   "name": "Felipe Carvajal Brown — Brand Palette",
-  "version": "1.0.0",
-  "description": "Official color tokens for fcarvajalbrown.cl, business cards, and all branded assets",
+  "version": "2.0.0",
+  "description": "Official color tokens for fcarvajalbrown.cl, business cards, and all branded assets — Warm Amber + Cream",
   "colors": {
     "background": {
-      "primary":   { "hex": "#1a1a1a", "use": "Main dark background, card front" },
-      "secondary": { "hex": "#111111", "use": "Deeper dark, footer" },
-      "surface":   { "hex": "#242424", "use": "Cards, nav on dark" },
-      "light":     { "hex": "#f9f9f9", "use": "Card back, light sections" },
+      "primary":   { "hex": "#15130f", "use": "Main dark background, card front" },
+      "secondary": { "hex": "#100e0b", "use": "Deeper dark, footer" },
+      "surface":   { "hex": "#211d17", "use": "Cards, nav on dark" },
+      "light":     { "hex": "#f4efe6", "use": "Cream — card back, light sections" },
       "white":     { "hex": "#ffffff", "use": "Pure white backgrounds" }
     },
     "text": {
-      "primary":   { "hex": "#f5f5f5", "use": "Main text on dark" },
-      "secondary": { "hex": "#e0e0e0", "use": "Body text on dark" },
-      "muted":     { "hex": "#777777", "use": "Subtitles, metadata" },
-      "faint":     { "hex": "#444444", "use": "Contact lines on white" },
-      "dark":      { "hex": "#1a1a1a", "use": "Text on white/light" }
+      "primary":   { "hex": "#f4efe6", "use": "Main text on dark" },
+      "secondary": { "hex": "#ddd6c9", "use": "Body text on dark" },
+      "muted":     { "hex": "#8a8175", "use": "Subtitles, metadata" },
+      "faint":     { "hex": "#3a352d", "use": "Hairlines, faint marks on dark" },
+      "dark":      { "hex": "#15130f", "use": "Text on cream/light" }
     },
     "accent": {
-      "purple":      { "hex": "#8b7cf6", "use": "Primary accent — links, highlights, CTA, card border" },
-      "purple_deep": { "hex": "#7b6fe0", "use": "Hover state, active links" },
-      "purple_faint":{ "hex": "#2a2040", "use": "Accent backgrounds, subtle highlight" }
+      "amber":       { "hex": "#e8a33d", "use": "Primary accent — links, highlights, CTA, card border" },
+      "amber_deep":  { "hex": "#d08f2e", "use": "Hover state, active links, accent on cream" },
+      "amber_faint": { "hex": "#2a2218", "use": "Accent backgrounds, subtle highlight" }
     },
     "border": {
-      "dark":   { "hex": "#2e2e2e", "use": "Dividers on dark bg" },
-      "light":  { "hex": "#e0e0e0", "use": "Dividers on light bg" },
-      "accent": { "hex": "#8b7cf6", "use": "Featured card border, accent line" }
+      "dark":   { "hex": "#2c271f", "use": "Dividers on dark bg" },
+      "light":  { "hex": "#ddd6c9", "use": "Dividers on cream bg" },
+      "accent": { "hex": "#e8a33d", "use": "Featured card border, accent line" }
     },
     "semantic": {
-      "success": { "hex": "#4caf7c", "use": "Available spots indicator" },
+      "success": { "hex": "#6fb98f", "use": "Available spots indicator" },
       "danger":  { "hex": "#e85c4a", "use": "Taken spots indicator" },
       "warning": { "hex": "#e8c96e", "use": "Launch badge" }
     }
