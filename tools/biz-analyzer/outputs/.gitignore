@@ -1,0 +1,4 @@
+# Keep folder, ignore all scraped data (personal business data)
+*.json
+*.csv
+!.gitkeep
