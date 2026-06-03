@@ -32,3 +32,20 @@ Open `index.html` directly in a browser — no server needed.
 ## Design
 
 Color palette defined in `assets/palette.json`. Site targets Chilean market; copy is in Spanish.
+
+## Commit conventions
+
+Use **conventional commits** with **functional blocks** before pushing.
+
+- Format: `type(scope): description`
+- Types: `feat`, `fix`, `chore`, `docs`, `refactor`, `test`
+- Before pushing: squash granular WIP commits into one commit per logical unit of work (a scraper, a tool, a feature, a doc). Never push more than one commit per functional block.
+- Scope = the directory or tool name: `biz-analyzer`, `wa-automate`, `site`, `docs`
+
+Examples:
+```
+feat(biz-analyzer): amarillas scraper — ES API, email fallback, 2421 leads
+feat(wa-automate): WhatsApp batch sender — 30-90s delay, dry-run, send log
+docs: outreach strategy spec — Brevo + WA-Automate, 6-touch sequence
+chore(biz-analyzer): setup — bs4, lxml, pytest, UNIQUE index
+```
