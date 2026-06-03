@@ -167,6 +167,9 @@ def main():
         row["quality_score"] = quality
         row["no_website_dns"] = "yes" if no_web else "no"
         row["phase"] = phase
+        # Brevo/GMass merge field aliases — templates use {{startup}} and {{nombre}}
+        row["startup"] = row.get("company", "")
+        row["nombre"] = row.get("contact_1_name", "") or ""
         buckets[phase].append(row)
 
     # TEST: 1 lead per sector from phase1 (mid-tier — don't waste best leads on unproven copy)
