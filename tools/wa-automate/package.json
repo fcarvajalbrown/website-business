@@ -1,0 +1,15 @@
+{
+  "name": "wa-outreach",
+  "version": "1.0.0",
+  "description": "WhatsApp batch sender for outreach phase CSVs",
+  "main": "send.js",
+  "scripts": {
+    "send": "node send.js",
+    "dry-run": "node send.js --dry-run"
+  },
+  "dependencies": {
+    "whatsapp-web.js": "^1.26.0",
+    "qrcode-terminal": "^0.12.0",
+    "csv-parse": "^5.5.6"
+  }
+}
