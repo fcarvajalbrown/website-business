@@ -1,18 +1,16 @@
 # Outreach Templates — Sequence completa
 
-**Variables Brevo:** `{{ contact.NOMBRE }}` / `{{ contact.STARTUP }}`  
-**Variables GMass / mail merge genérico:** `{{nombre}}` / `{{startup}}`  
-Usar el formato según la plataforma. Abajo se usa `{{}}` para legibilidad.
+**Variables Brevo (copiar exacto):** `{{ contact.startup }}` / `{{ contact.nombre }}`  
+Columnas CSV: `startup` = nombre empresa, `nombre` = nombre contacto (vacío si no hay → Brevo usa fallback).
 
 ---
 
 ## Variables por lead
 
-| Variable | Columna CSV | Fallback si vacío |
-|----------|-------------|-------------------|
-| `{{nombre}}` | `contact_1_name` | `equipo` |
-| `{{startup}}` | `company` | (requerido, nunca vacío) |
-| `{{ciudad}}` | `city` | `Santiago` |
+| Variable Brevo | Columna CSV | Fallback si vacío |
+|----------------|-------------|-------------------|
+| `{{ contact.nombre }}` | `nombre` | `equipo` |
+| `{{ contact.startup }}` | `startup` | (siempre tiene valor) |
 
 ---
 
@@ -22,16 +20,16 @@ Usar el formato según la plataforma. Abajo se usa `{{}}` para legibilidad.
 
 | Versión | Asunto |
 |---------|--------|
-| A (recomendado) | `{{startup}} no tiene sitio web — lo resuelvo en 2 semanas` |
-| B | `¿Por qué {{startup}} no aparece en Google?` |
-| C | `Sitio web para {{startup}}: 14 días, precio fijo` |
+| A (recomendado) | `{{ contact.startup }} no tiene sitio web — lo resuelvo en 2 semanas` |
+| B | `¿Por qué {{ contact.startup }} no aparece en Google?` |
+| C | `Sitio web para {{ contact.startup }}: 14 días, precio fijo` |
 
 ### Cuerpo
 
 ```
-Hola {{nombre}},
+Hola {{ contact.nombre }},
 
-Encontré {{startup}} buscando empresas sin presencia web en Chile. Trabajo interesante — pero no hay dónde mandar a un cliente a conocerte.
+Encontré {{ contact.startup }} buscando empresas sin presencia web en Chile. Trabajo interesante — pero no hay dónde mandar a un cliente a conocerte.
 
 Soy Felipe Carvajal, desarrollador en Santiago. Resuelvo exactamente esto:
 
@@ -54,7 +52,7 @@ felipecarvajal.cl
 ### Asunto
 
 ```
-Re: {{startup}} no tiene sitio web — lo resuelvo en 2 semanas
+Re: {{ contact.startup }} no tiene sitio web — lo resuelvo en 2 semanas
 ```
 
 *(responder al hilo del email 1 — Brevo lo hace automático)*
@@ -62,7 +60,7 @@ Re: {{startup}} no tiene sitio web — lo resuelvo en 2 semanas
 ### Cuerpo
 
 ```
-Hola {{nombre}},
+Hola {{ contact.nombre }},
 
 Solo quería asegurarme de que no se perdió mi mensaje anterior.
 
@@ -79,17 +77,17 @@ felipecarvajal.cl
 ### Asunto
 
 ```
-Lo que incluye el sitio de {{startup}} (y cuánto demora)
+Lo que incluye el sitio de {{ contact.startup }} (y cuánto demora)
 ```
 
 ### Cuerpo
 
 ```
-Hola {{nombre}},
+Hola {{ contact.nombre }},
 
 Por si sirve de contexto antes de decidir:
 
-Lo que entrego en 14 días para {{startup}}:
+Lo que entrego en 14 días para {{ contact.startup }}:
 — Sitio de 1 a 5 páginas (inicio, servicios, contacto, sobre nosotros)
 — Dominio .cl registrado a tu nombre
 — Hosting por 1 año incluido
@@ -111,19 +109,19 @@ felipecarvajal.cl
 ### Asunto
 
 ```
-Último mensaje — {{startup}}
+Último mensaje — {{ contact.startup }}
 ```
 
 ### Cuerpo
 
 ```
-Hola {{nombre}},
+Hola {{ contact.nombre }},
 
 Este es mi último mensaje para no ser molesto.
 
 Si en algún momento necesitan un sitio web confiable, entregado a tiempo y sin sorpresas en el precio, saben dónde encontrarme.
 
-Mucho éxito con {{startup}}.
+Mucho éxito con {{ contact.startup }}.
 
 Felipe
 felipecarvajal.cl
@@ -133,10 +131,10 @@ felipecarvajal.cl
 
 ## WHATSAPP 1 — Día 2
 
-*(Máx. 160 caracteres para que se vea sin expandir)*
+*(Máx. 160 caracteres — WA-Automate usa `{company}` y `{city}` del CSV directamente)*
 
 ```
-Hola {{nombre}}, te escribí por email sobre {{startup}}. Vi que no tienen sitio web — lo resuelvo en 2 semanas, precio fijo. ¿Hablamos? felipecarvajal.cl
+Hola {company} 👋 Vi que no tienen sitio web todavía. Soy Felipe, desarrollador web freelance en Chile — ayudo a empresas a tener presencia online en 2 semanas. ¿Tienen 15 min esta semana? felipecarvajal.cl
 ```
 
 ---
@@ -144,27 +142,27 @@ Hola {{nombre}}, te escribí por email sobre {{startup}}. Vi que no tienen sitio
 ## WHATSAPP 2 — Día 9
 
 ```
-Hola {{nombre}}, última vez que te escribo. Si en algún momento necesitan sitio web para {{startup}}, aquí estoy. Saludos, Felipe.
+Hola {company}, última vez que te escribo. Si en algún momento necesitan sitio web, aquí estoy. Saludos, Felipe.
 ```
 
 ---
 
 ## VARIANTE MINERÍA — Email 1 (leads direcmin)
 
-Para los 151 leads de direcmin: el pitch es diferente — tienen website, no es "te falta sitio", es "tu presencia digital no te representa".
+Para los 151 leads de direcmin: tienen website, el pitch es "tu presencia digital no te representa".
 
 ### Asunto
 
 ```
-{{startup}}: presencia digital que esté a la altura
+{{ contact.startup }}: presencia digital que esté a la altura
 ```
 
 ### Cuerpo
 
 ```
-Hola {{nombre}},
+Hola {{ contact.nombre }},
 
-Vi {{startup}} en el directorio de proveedores mineros. Buena reputación en el sector — pero cuando un cliente potencial busca en Google, lo que encuentra no hace justicia a lo que realmente hacen.
+Vi {{ contact.startup }} en el directorio de proveedores mineros. Buena reputación en el sector — pero cuando un cliente potencial busca en Google, lo que encuentra no hace justicia a lo que realmente hacen.
 
 Soy Felipe Carvajal, desarrollador en Santiago. Trabajo con empresas B2B que necesitan un sitio profesional sin el tiempo ni el presupuesto para una agencia.
 
@@ -184,9 +182,11 @@ felipecarvajal.cl
 
 ## Notas de uso
 
+**Brevo fallback:** En Configuración de la campaña → Personalización → definir `nombre` fallback = `equipo`. Así los leads sin contacto reciben "Hola equipo," en vez de "Hola ,".
+
 **Brevo:** Crear una campaña por cada fase CSV. Secuencia automática en emails 2, 3, 4. Brevo detiene la secuencia si el lead responde.
 
-**Personalización mínima antes de enviar phase3:** Para los 206 mejores leads, vale 5 minutos revisar el CSV y reemplazar "Trabajo interesante" por algo específico de la empresa si aparece en la columna `company`.
+**Personalización mínima antes de enviar phase3:** Para los 206 mejores leads, vale 5 minutos revisar el CSV y reemplazar "Trabajo interesante" por algo específico de la empresa.
 
 **Asunto que mejor convierte en Chile según datos de Brevo 2024:** preguntas directas > afirmaciones > nombres propios. Probar versión B en el TEST batch primero.
 
