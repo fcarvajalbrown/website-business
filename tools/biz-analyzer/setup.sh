@@ -17,7 +17,7 @@ source .venv/bin/activate
 
 # Install dependencies
 pip install --quiet --upgrade pip
-pip install --quiet httpx rich playwright
+pip install --quiet httpx rich playwright beautifulsoup4 lxml pytest
 
 # Install playwright browsers (needed for Google Maps scraping)
 playwright install chromium --with-deps
@@ -39,6 +39,7 @@ CREATE TABLE IF NOT EXISTS leads (
   founded_year INTEGER,
   phone TEXT,
   email TEXT,
+  contacts TEXT,
   domain TEXT,
   has_website INTEGER,
   composite_score INTEGER,
@@ -46,6 +47,7 @@ CREATE TABLE IF NOT EXISTS leads (
   contacted INTEGER DEFAULT 0,
   created_at TEXT DEFAULT (datetime('now'))
 );
+CREATE UNIQUE INDEX IF NOT EXISTS idx_company_source ON leads(company, source);
 """)
 conn.close()
 print("DB initialized at leads.db")
